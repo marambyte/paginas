@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --verde:#75ff00;
+    --preto:#000000; /*Variaveis de cores*/
+    --branco:#ffffff;
+}
+body{
+    color: var(--branco);
+    background: var(--preto);
+}
+
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--preto);
+    transition: all 0.5s;
+    position:fixed;   /*  Fixar o menu na tela */
+    z-index: 100;     /*Propriedade para sobrepor o slider*/
+}
+.navigation .logo{
+    color: var(--verde);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.logo span{
+    color: var(--branco);
+    
+}
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.navigation ul li a{
+    color: var(--branco);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.navigation ul li a:hover{
+    color: var(--verde);
+}
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.menu{
+    cursor: pointer;
+    display: none;
+}
+.menu .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--branco);
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3){
+    background: var(--verde);
+}
+.home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+}
+.home-text{
+    max-width: 37rem;
+}
+.home-text .text-h4{
+    font-size: 1.5rem;
+    color: var(--verde);
+    margin-bottom: 1rem;
+}
+.home-text .text-h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+.home-text p{
+    margin-bottom: 4rem;
+}
+.home-btn{
+    padding: 15px 45px;
+    background: var(--verde);
+    color: var(--preto);
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all 0.5s;
+    box-shadow: 0 0 1rem #77ff00b2;
+}
+.home-btn:hover{
+    background: #397900;
+}
+.carrossel{
+    display: flex;
+    justify-content: center;
+    border: solid 2px var(--branco) ;
+    box-shadow: 0 0 0.9rem var(--branco) ;
+    border-radius: 10px ;
+    align-items: center;
+    height:50vh;
+    width:50vh;
+    min-width: 50vh;
+    min-height: 50vh;
+    overflow: hidden;
+    
+}
+.container{
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    transform: translateX(0);
+    
+}
+.carrossel img{
+ object-fit: cover;
+ width: 100%;
+ height: 100%;
+}
+
+.footer-sociais{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+    width: 100%;
+    border-top: solid 1px #ccc;
+    background: var(--preto);
+    transition: all 0.5s;
+}
+.sociais a{
+    text-decoration: none;
+    padding: 1rem;
+   
+}
+.sociais i{
+    color: var(--branco);
+    font-size: 48px;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+
+@media (max-width:785px) {
+
+    .navigation{
+        padding: 18px 20px;
+    }
+    .menu{
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background:#397900;
+        gap: -10px;
+        transition: 0.3s;
+        opacity: 0.95 ;
+    }
+    .nav-menu.ativo{
+        right: 0;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    /*main*/
+    .home{
+        height:0%;
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+    }
+    .home .text-h4{
+        font-size: 15px;
+    }
+    .home .text-h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home p{
+        font-size: 15px;
+    }
+ 
+
+}
