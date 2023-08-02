@@ -147,11 +147,9 @@ body{
     border-top: solid 1px #ccc;
     background: var(--preto);
     transition: all 0.5s;
-    
 }
 .sociais a{
     text-decoration: none;
-    color: #ffffff;
     padding: 1rem;
    
 }
