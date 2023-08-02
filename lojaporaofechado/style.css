@@ -150,6 +150,7 @@ body{
 }
 .sociais a{
     text-decoration: none;
+    color: var(--verde);
     padding: 1rem;
    
 }
